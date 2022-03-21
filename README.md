@@ -1,2 +1,2 @@
-# openarchtitus
+# Open ArchTitus
 ArchTitus reimagined.

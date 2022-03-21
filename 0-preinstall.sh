@@ -132,7 +132,7 @@ mkdir /mnt/boot/efi
 mount -t vfat -L EFIBOOT /mnt/boot/
 
 if ! grep -qs '/mnt' /proc/mounts; then
-    echo "Drive is not mounted can not continue"
+    echo "Drive is not mounted. Cannot continue"
     echo "Rebooting in 3 Seconds ..." && sleep 1
     echo "Rebooting in 2 Seconds ..." && sleep 1
     echo "Rebooting in 1 Second ..." && sleep 1
@@ -145,7 +145,7 @@ echo -ne "
 "
 pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
-cp -R ${SCRIPT_DIR} /mnt/root/ArchTitus
+cp -R ${SCRIPT_DIR} /mnt/root/openarchtitus
 cp /etc/pacman.d/mirrorlist /mnt/etc/pacman.d/mirrorlist
 echo -ne "
 -------------------------------------------------------------------------

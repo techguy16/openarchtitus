@@ -15,7 +15,6 @@ echo -ne "
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
 -------------------------------------------------------------------------
-                Scripts are in directory named ArchTitus
 "
     bash startup.sh
     source $SCRIPT_DIR/setup.conf

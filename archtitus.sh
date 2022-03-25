@@ -15,13 +15,14 @@ echo -ne "
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
 -------------------------------------------------------------------------
+                Scripts are in directory named ArchTitus
 "
     bash startup.sh
     source $SCRIPT_DIR/setup.conf
     bash 0-preinstall.sh
-    arch-chroot /mnt /root/openarchtitus/1-setup.sh
-    arch-chroot /mnt /usr/bin/runuser -u $USERNAME -- /home/$USERNAME/openarchtitus/2-user.sh
-    arch-chroot /mnt /root/openarchtitus/3-post-setup.sh
+    arch-chroot /mnt /root/ArchTitus/1-setup.sh
+    arch-chroot /mnt /usr/bin/runuser -u $USERNAME -- /home/$USERNAME/ArchTitus/2-user.sh
+    arch-chroot /mnt /root/ArchTitus/3-post-setup.sh
 
 echo -ne "
 -------------------------------------------------------------------------

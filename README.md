@@ -18,7 +18,8 @@ From initial Prompt type the following commands:
 pacman -Sy
 pacman -S git
 git clone -b minimal https://github.com/techguy16/openarchtitus
-cd openarchtitus
+mv openarchtitus archtitus
+cd archtitus
 ./archtitus.sh
 ```
 
@@ -27,7 +28,8 @@ If those commands don't work, try these:
 pacman -Syu
 pacman -S git
 git clone -b minimal https://github.com/techguy16/openarchtitus
-cd openarchtitus
+mv openarchtitus archtitus
+cd archtitus
 ./archtitus.sh
 ```
 

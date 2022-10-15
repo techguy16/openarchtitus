@@ -1,6 +1,6 @@
-# OpenArchTitus
+## OpenArchTitus
 
-This is the minimal version of [ArchTitus](https://github.com/christitustech/archtitus) based on the server branch that I will actively maintain.
+This is the minimal version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) based on the server branch that I will actively maintain.
 It will be similar to the original, but with some changes.
 
 ---

@@ -1,6 +1,6 @@
 # OpenArchTitus
 
-This is a version of [ArchTitus](https://github.com/christitustech/archtitus) that I will actively maintain.
+This is a version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) that I will actively maintain.
 It will be similar to the original, but with some changes.
 
 ---

@@ -1,1 +1,16 @@
 git
+lxde
+mesa
+xorg
+xorg-server
+xorg-apps
+xorg-drivers
+xorg-xkill
+xorg-xinit
+alsa-plugins
+alsa-utils
+bluez
+bluez-libs
+bluez-utils
+efibootmgr
+ntfs-3g

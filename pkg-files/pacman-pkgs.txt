@@ -12,6 +12,7 @@ linux-headers
 noto-fonts-emoji
 usbutils
 xdg-user-dirs
+
 --END OF MINIMAL INSTALL--
 alsa-plugins
 alsa-utils
@@ -81,6 +82,8 @@ python-notify2
 python-psutil
 python-pyqt5
 python-pip
+python3-pip
+python3
 qemu
 snap-pac
 snapper

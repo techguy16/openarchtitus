@@ -17,5 +17,7 @@ plymouth-git
 sddm-nordic-theme-git
 snapper-gui-git
 ttf-meslo
+pamac-aur
+pamac-nosnap
 vde2
 zoom

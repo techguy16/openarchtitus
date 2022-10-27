@@ -37,9 +37,9 @@ filesystem () {
 # btrfs and ext4. Others will be added in future.
 echo -ne "
     Please Select your file system for both boot and root
-    1)      btrfs
-    2)      ext4
-    3)      luks with btrfs
+    1)      btrfs - Bleeding-edge file system
+    2)      ext4 - Most Stable File System
+    3)      luks with btrfs - Encrypted File System
     0)      exit
 "
 read FS

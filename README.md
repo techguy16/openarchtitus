@@ -20,7 +20,7 @@ pacman -S git
 git clone https://github.com/techguy16/openarchtitus
 mv openarchtitus archtitus
 cd archtitus
-./archtitus.sh
+./openarchtitus.sh
 ```
 
 If those commands don't work, try these:
@@ -30,7 +30,7 @@ pacman -S git
 git clone https://github.com/techguy16/openarchtitus
 mv openarchtitus archtitus
 cd archtitus
-./archtitus.sh
+./openarchtitus.sh
 ```
 
 

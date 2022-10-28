@@ -194,7 +194,7 @@ esac
 }
 keymap () {
 echo -ne "
-Please select key board layout from this list"
+Please select keyboard layout from this list"
 # These are default key maps as presented in official arch repo archinstall
 options=(us by ca cf cz de dk es et fa fi fr gr hu il it lt lv mk nl no pl ro ru sg ua uk)
 
@@ -287,6 +287,17 @@ desktopenv () {
   set_option DESKTOP_ENV $desktop_env
 }
 
+kernel-chooser () {
+  # Let the user choose Desktop Enviroment from predefined list
+  
+  # echo "Sorry, but you cannot choose your DE until the KDE Problem is fixed. Sorry for the inconvenience."
+  echo -ne "Please select your desired Kernel:\n"
+  options=(linux linux-lts linux-zen linux-xanmod)
+  select_option $? 4 "${options[@]}"
+  kernel_chose=${options[$?]}
+  set_option KERNEL_CHOSE $kernel_chose
+}
+
 installtype () {
   echo -ne "Please select type of installation:\n\n
   Full install: Installs full featured desktop enviroment, with added apps and themes needed for everyday use\n
@@ -324,6 +335,9 @@ diskpart
 clear
 logo
 filesystem
+clear
+logo
+kernel-chooser
 clear
 logo
 timezone

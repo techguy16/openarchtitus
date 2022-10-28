@@ -292,7 +292,7 @@ kernel-chooser () {
   
   # echo "Sorry, but you cannot choose your DE until the KDE Problem is fixed. Sorry for the inconvenience."
   echo -ne "Please select your desired Kernel:\n"
-  options=(linux linux-lts linux-zen linux-xanmod)
+  options=(linux linux-lts linux-zen linux-hardened linux-xanmod)
   select_option $? 4 "${options[@]}"
   kernel_chose=${options[$?]}
   set_option KERNEL_CHOSE $kernel_chose

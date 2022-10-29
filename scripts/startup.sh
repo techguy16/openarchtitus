@@ -141,7 +141,7 @@ filesystem () {
 # This function will handle file systems. At this movement we are handling only
 # btrfs and ext4. Others will be added in future.
 echo -ne "
-Please Select your file system for both boot and root
+Please select your file system for both boot and root
 "
 options=("btrfs" "ext4" "luks" "exit")
 select_option $? 1 "${options[@]}"
@@ -194,14 +194,14 @@ esac
 }
 keymap () {
 echo -ne "
-Please select keyboard layout from this list"
+Please select a keyboard layout from this list"
 # These are default key maps as presented in official arch repo archinstall
 options=(us by ca cf cz de dk es et fa fi fr gr hu il it lt lv mk nl no pl ro ru sg ua uk)
 
 select_option $? 4 "${options[@]}"
 keymap=${options[$?]}
 
-echo -ne "Your key boards layout: ${keymap} \n"
+echo -ne "Chosen Keyboard layout: ${keymap} \n"
 set_option KEYMAP $keymap
 }
 
@@ -300,8 +300,8 @@ kernel-chooser () {
 
 installtype () {
   echo -ne "Please select type of installation:\n\n
-  Full install: Installs full featured desktop enviroment, with added apps and themes needed for everyday use\n
-  Minimal Install: Installs only apps few selected apps to get you started\n"
+  Full Install: Installs full featured desktop enviroment, with added apps and themes needed for everyday use\n
+  Minimal Install: Installs only a few selected apps to get you started\n"
   options=(FULL MINIMAL)
   select_option $? 4 "${options[@]}"
   install_type=${options[$?]}

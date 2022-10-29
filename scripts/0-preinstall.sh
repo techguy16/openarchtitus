@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
 #-------------------------------------------------------------------------
-#   █████╗ ██████╗  ██████╗██╗  ██╗████████╗██╗████████╗██╗   ██╗███████╗
-#  ██╔══██╗██╔══██╗██╔════╝██║  ██║╚══██╔══╝██║╚══██╔══╝██║   ██║██╔════╝
-#  ███████║██████╔╝██║     ███████║   ██║   ██║   ██║   ██║   ██║███████╗
-#  ██╔══██║██╔══██╗██║     ██╔══██║   ██║   ██║   ██║   ██║   ██║╚════██║
-#  ██║  ██║██║  ██║╚██████╗██║  ██║   ██║   ██║   ██║   ╚██████╔╝███████║
-#  ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝   ╚═╝   ╚═╝   ╚═╝    ╚═════╝ ╚══════╝
+# OpenArchTitus
+# ArchTitus - by Chris Titus
+# OpenArchTitus - maintained by techguy16
 #-------------------------------------------------------------------------
 #github-action genshdoc
 
@@ -67,16 +64,15 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 createsubvolumes () {
-    btrfs subvolume create /mnt/@
-    btrfs subvolume create /mnt/@home
-    btrfs subvolume create /mnt/@log
-    btrfs subvolume create /mnt/@.snapshots
+    for subvol in '' ${subvols[@]}; do # the '' adds the root subvolume to the loop
+    btrfs subvolume create /mnt/@$subvol
+	done
 }
 
 mountallsubvol () {
-    mount -o ${MOUNT_OPTIONS},subvol=@home ${partition3} /mnt/home
-    mount -o ${MOUNT_OPTIONS},subvol=@log ${partition3} /mnt/var/log
-    mount -o ${MOUNT_OPTIONS},subvol=@.snapshots ${partition3} /mnt/.snapshots
+    for subvol in ${subvols[@]}; do
+		mount -o ${MOUNT_OPTIONS},subvol=@$subvol ${partition3} /mnt/$subvol
+	done
 }
 
 subvolumesetup () {
@@ -87,7 +83,9 @@ subvolumesetup () {
 # mount @ subvolume
     mount -o ${MOUNT_OPTIONS},subvol=@ ${partition3} /mnt
 # make directories home, .snapshots, var, tmp
-    mkdir -p /mnt/{home,var,tmp,.snapshots}
+       for subvol in ${subvols[@]}; do
+		mkdir -p /mnt/$subvol
+	done
 # mount subvolumes
     mountallsubvol
 }

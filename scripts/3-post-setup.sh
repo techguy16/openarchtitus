@@ -6,13 +6,13 @@ echo -ne "
            █▄█ █▀▀ ██▄ █░▀█ █▀█ █▀▄ █▄▄ █▀█ ░█░ █ ░█░ █▄█ ▄█
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
-                        SCRIPTHOME: ArchTitus
+                      SCRIPTHOME: openarchtitus
 -------------------------------------------------------------------------
 
 Final Setup and Configurations
 GRUB EFI Bootloader Install & Check
 "
-source ${HOME}/ArchTitus/configs/setup.conf
+source ${HOME}/openarchtitus/configs/setup.conf
 
 if [[ -d "/sys/firmware/efi" ]]; then
     grub-install --efi-directory=/boot ${DISK}
@@ -30,13 +30,13 @@ fi
 # set kernel parameter for adding splash screen
 sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="[^"]*/& splash /' /etc/default/grub
 
-echo -e "Installing CyberRe Grub theme..."
+echo -e "Installing Tela Grub theme..."
 THEME_DIR="/boot/grub/themes"
 THEME_NAME=CyberRe
 echo -e "Creating the theme directory..."
 mkdir -p "${THEME_DIR}/${THEME_NAME}"
 echo -e "Copying the theme..."
-cd ${HOME}/ArchTitus
+cd ${HOME}/openarchtitus
 cp -a configs${THEME_DIR}/${THEME_NAME}/* ${THEME_DIR}/${THEME_NAME}
 echo -e "Backing up Grub config..."
 cp -an /etc/default/grub /etc/default/grub.bak

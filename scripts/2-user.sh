@@ -6,12 +6,12 @@ echo -ne "
            █▄█ █▀▀ ██▄ █░▀█ █▀█ █▀▄ █▄▄ █▀█ ░█░ █ ░█░ █▄█ ▄█
 -------------------------------------------------------------------------
                     Automated Arch Linux Installer
-                        SCRIPTHOME: ArchTitus
+                      SCRIPTHOME: openarchtitus
 -------------------------------------------------------------------------
 
 Installing AUR Softwares
 "
-source $HOME/ArchTitus/configs/setup.conf
+source $HOME/openarchtitus/configs/setup.conf
 
   cd ~
   mkdir "/home/$USERNAME/.cache"
@@ -20,7 +20,7 @@ source $HOME/ArchTitus/configs/setup.conf
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
   ln -s "~/zsh/.zshrc" ~/.zshrc
 
-sed -n '/'$INSTALL_TYPE'/q;p' ~/ArchTitus/pkg-files/kde.txt | while read line
+sed -n '/'$INSTALL_TYPE'/q;p' ~/openarchtitus/pkg-files/kde.txt | while read line
 do
   if [[ ${line} == '--END OF MINIMAL INSTALL--' ]]
   then
@@ -39,7 +39,7 @@ if [[ ! $AUR_HELPER == none ]]; then
   makepkg -si --noconfirm
   # sed $INSTALL_TYPE is using install type to check for MINIMAL installation, if it's true, stop
   # stop the script and move on, not installing any more packages below that line
-  sed -n '/'$INSTALL_TYPE'/q;p' ~/ArchTitus/pkg-files/aur-pkgs.txt | while read line
+  sed -n '/'$INSTALL_TYPE'/q;p' ~/openarchtitus/pkg-files/aur-pkgs.txt | while read line
   do
     if [[ ${line} == '--END OF MINIMAL INSTALL--' ]]; then
       # If selected installation type is FULL, skip the --END OF THE MINIMAL INSTALLATION-- line
@@ -55,9 +55,9 @@ export PATH=$PATH:~/.local/bin
 # Theming DE if user chose FULL installation
 if [[ $INSTALL_TYPE == "FULL" ]]; then
   if [[ $DESKTOP_ENV == "kde" ]]; then
-    cp -r ~/ArchTitus/configs/.config/* ~/.config/
+    cp -r ~/openarchtitus/configs/.config/* ~/.config/
     pip install konsave
-    konsave -i ~/ArchTitus/configs/kde.knsv
+    konsave -i ~/openarchtitus/configs/kde.knsv
     sleep 1
     konsave -a kde
   elif [[ $DESKTOP_ENV == "openbox" ]]; then

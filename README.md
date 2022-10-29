@@ -1,7 +1,6 @@
 # OpenArchTitus
 
-This is a version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) that I will actively maintain.
-It will be similar to the original, but with some changes.
+This is a version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) that will be actively maintained.
 
 ---
 ## Create bootable drive/use ISO image
@@ -12,7 +11,7 @@ If you are using OpenArchTitus with a Virtual Machine, you don't have to do any 
 
 ## Boot Arch Linux
 
-From initial Prompt type the following commands:
+From initial prompt type the following commands:
 
 ```
 pacman -Sy
@@ -23,14 +22,12 @@ cd archtitus
 ./openarchtitus.sh
 ```
 
-If those commands don't work, try these:
+If those commands don't work, try these (and then repeat the previous commands):
 ```
-pacman -Syu
-pacman -S git
-git clone https://github.com/techguy16/openarchtitus
-mv openarchtitus archtitus
-cd archtitus
-./openarchtitus.sh
+pacman-key --init
+pacman-key --populate
+pacman-key --refresh-keys
+pacman -S archlinux-keyring
 ```
 
 
@@ -67,5 +64,6 @@ An issue is easier to resolve if it contains a few important pieces of informati
 1. What commit/branch you used
 1. Where you were installing (VMWare, Virtualbox, Virt-Manager, Baremetal, etc)
     1. If a VM, what was the configuration used.
+
 ## Credits
 - Thanks to [Chris Titus](https://github.com/christitustech) for the original script.

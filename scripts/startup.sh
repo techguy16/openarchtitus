@@ -295,7 +295,7 @@ kernel-chooser () {
   options=(linux linux-lts linux-zen linux-hardened linux-xanmod)
   select_option $? 4 "${options[@]}"
   kernel_chose=${options[$?]}
-  set_option KERNEL_CHOSE $kernel_chose
+  set_option KERNELCHOSE $kernelchose
 }
 
 installtype () {

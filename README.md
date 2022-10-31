@@ -17,8 +17,7 @@ From initial prompt type the following commands:
 pacman -Sy
 pacman -S git
 git clone https://github.com/techguy16/openarchtitus
-mv openarchtitus archtitus
-cd archtitus
+cd openarchtitus
 ./openarchtitus.sh
 ```
 

@@ -9,7 +9,7 @@ echo -ne "
                         SCRIPTHOME: ArchTitus
 -------------------------------------------------------------------------
 "
-source $HOME/openarchtitus/configs/setup.conf
+source ../configs/setup.conf
 echo -ne "
 -------------------------------------------------------------------------
                     Network Setup 
@@ -131,11 +131,11 @@ if ! source $HOME/ArchTitus/configs/setup.conf; then
 		echo "Incorrect username."
 	done 
 # convert name to lowercase before saving to setup.conf
-echo "username=${username,,}" >> ${HOME}/ArchTitus/configs/setup.conf
+echo "username=${username,,}" >> ../configs/setup.conf
 
     #Set Password
     read -p "Please enter password:" password
-echo "password=${password,,}" >> ${HOME}/ArchTitus/configs/setup.conf
+echo "password=${password,,}" >> ../configs/setup.conf
 
     # Loop through user input until the user gives a valid hostname, but allow the user to force save 
 	while true
@@ -154,7 +154,7 @@ echo "password=${password,,}" >> ${HOME}/ArchTitus/configs/setup.conf
 		fi 
 	done 
 
-    echo "NAME_OF_MACHINE=${name_of_machine,,}" >> ${HOME}/ArchTitus/configs/setup.conf
+    echo "NAME_OF_MACHINE=${name_of_machine,,}" >> ../configs/setup.conf
 fi
 echo -ne "
 -------------------------------------------------------------------------
@@ -170,8 +170,8 @@ if [ $(whoami) = "root"  ]; then
     echo "$USERNAME:$PASSWORD" | chpasswd
     echo "$USERNAME password set"
 
-	cp -R $HOME/ArchTitus /home/$USERNAME/
-    chown -R $USERNAME: /home/$USERNAME/ArchTitus
+	cp -R $HOME/openarchtitus /home/$USERNAME/
+    chown -R $USERNAME: /home/$USERNAME/openarchtitus
     echo "ArchTitus copied to home directory"
 
 # enter $NAME_OF_MACHINE to /etc/hostname

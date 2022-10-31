@@ -294,7 +294,7 @@ kernel-chooser () {
   echo -ne "Please select your desired Kernel:\n"
   options=(linux linux-lts linux-zen linux-hardened linux-xanmod)
   select_option $? 4 "${options[@]}"
-  kernel_chose=${options[$?]}
+  kernelchose=${options[$?]}
   set_option KERNELCHOSE $kernelchose
 }
 

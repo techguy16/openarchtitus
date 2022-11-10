@@ -287,7 +287,7 @@ desktopenv () {
   set_option DESKTOP_ENV $desktop_env
 }
 
-kernel-chooser () {
+kernelchooser () {
   # Let the user choose Desktop Enviroment from predefined list
   
   # echo "Sorry, but you cannot choose your DE until the KDE Problem is fixed. Sorry for the inconvenience."
@@ -337,7 +337,7 @@ logo
 filesystem
 clear
 logo
-kernel-chooser
+kernelchooser
 clear
 logo
 timezone

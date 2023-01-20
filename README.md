@@ -1,3 +1,6 @@
+## This branch is unmaintained
+This branch is unmaintained due to the fact that this branch will become "Server Install" in the main branch.
+
 ## OpenArchTitus
 
 This is the minimal version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) based on the server branch that I will actively maintain.

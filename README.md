@@ -64,5 +64,11 @@ An issue is easier to resolve if it contains a few important pieces of informati
 1. Where you were installing (VMWare, Virtualbox, Virt-Manager, Baremetal, etc)
     1. If a VM, what was the configuration used.
 
+## Contributors
+#### Repository Manager/Owner<br>
+[<img src='https://avatars.githubusercontent.com/u/88870951?v=4' style='width:40px;'>](https://github.com/techguy16)
+#### Other Contributors<br>
+[<img src='https://avatars.githubusercontent.com/u/75908199?v=4' style='width:40px;'>](https://github.com/treatmeniceplz)
+
 ## Credits
 - Thanks to [Chris Titus](https://github.com/christitustech) for the original script.

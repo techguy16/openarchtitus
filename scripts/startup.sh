@@ -281,7 +281,7 @@ desktopenv () {
   
   # echo "Sorry, but you cannot choose your DE until the KDE Problem is fixed. Sorry for the inconvenience."
   echo -ne "Please select your desired Desktop Enviroment:\n"
-  options=(gnome kde cinnamon xfce mate budgie lxde lxqt deepin openbox cutefish minimal server)
+  options=(gnome kde cinnamon xfce mate budgie lxde lxqt deepin openbox cutefish minimal)
   select_option $? 4 "${options[@]}"
   desktop_env=${options[$?]}
   set_option DESKTOP_ENV $desktop_env
@@ -301,8 +301,9 @@ kernelchooser () {
 installtype () {
   echo -ne "Please select type of installation:\n\n
   Full Install: Installs full featured desktop enviroment, with added apps and themes needed for everyday use\n
-  Minimal Install: Installs only a few selected apps to get you started\n"
-  options=(FULL MINIMAL)
+  Minimal Install: Installs only a few selected apps to get you started\n
+  Server Install: A very bare-bones install only including the basic tools\n"
+  options=(FULL MINIMAL SERVER)
   select_option $? 4 "${options[@]}"
   install_type=${options[$?]}
   set_option INSTALL_TYPE $install_type
@@ -319,9 +320,9 @@ clear
 logo
 desktopenv
 # Set fixed options that installation uses if user choses server installation
-set_option INSTALL_TYPE MINIMAL
-set_option AUR_HELPER NONE
-if [[ ! $desktop_env == server ]]; then
+# set_option INSTALL_TYPE MINIMAL
+# set_option AUR_HELPER NONE
+if [[ ! $install_type == server ]]; then
   clear
   logo
   aurhelper

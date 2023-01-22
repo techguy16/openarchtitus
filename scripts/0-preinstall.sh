@@ -157,7 +157,8 @@ echo -ne "
 if [[ ! -d "/sys/firmware/efi" ]]; then
     grub-install --boot-directory=/mnt/boot ${DISK}
 else
-    pacstrap /mnt efibootmgr --noconfirm --needed
+    # pacstrap /mnt efibootmgr --noconfirm --needed
+    grub-install --target=i386-pc ${partition2}
 fi
 echo -ne "
 -------------------------------------------------------------------------

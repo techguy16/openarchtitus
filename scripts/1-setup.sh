@@ -9,7 +9,7 @@ echo -ne "
                         SCRIPTHOME: ArchTitus
 -------------------------------------------------------------------------
 "
-source ../configs/setup.conf
+source $CONFIGS_DIR/setup.conf
 echo -ne "
 -------------------------------------------------------------------------
                     Network Setup 

@@ -288,14 +288,11 @@ desktopenv () {
 }
 
 kernelchooser () {
-  # Let the user choose Desktop Enviroment from predefined list
-  
-  # echo "Sorry, but you cannot choose your DE until the KDE Problem is fixed. Sorry for the inconvenience."
   echo -ne "Please select your desired Kernel:\n"
   options=(linux linux-lts linux-zen linux-hardened linux-xanmod)
   select_option $? 4 "${options[@]}"
   kernelchose=${options[$?]}
-  set_option KERNELCHOSE $kernelchose
+  # set_option KERNELCHOSE $kernelchose
 }
 
 installtype () {

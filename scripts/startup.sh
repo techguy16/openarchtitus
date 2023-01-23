@@ -281,7 +281,7 @@ desktopenv () {
   
   # echo "Sorry, but you cannot choose your DE until the KDE Problem is fixed. Sorry for the inconvenience."
   echo -ne "Please select your desired Desktop Enviroment:\n"
-  options=(gnome kde cinnamon xfce mate budgie lxde lxqt deepin openbox cutefish minimal)
+  options=(gnome gnome-flashback kde cinnamon xfce mate budgie lxde lxqt deepin openbox cutefish minimal)
   select_option $? 4 "${options[@]}"
   desktop_env=${options[$?]}
   set_option DESKTOP_ENV $desktop_env

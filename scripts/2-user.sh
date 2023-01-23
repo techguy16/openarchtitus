@@ -11,7 +11,7 @@ echo -ne "
 
 Installing AUR Softwares
 "
-source ../configs/setup.conf
+source $CONFIGS_DIR/setup.conf
 
   cd ~
   mkdir "/home/$USERNAME/.cache"

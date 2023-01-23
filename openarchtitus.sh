@@ -15,11 +15,11 @@ SCRIPTS_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd 
 CONFIGS_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"/configs
 set +a
 
-sh ./scripts/startup.sh
-sh ./scripts/0-preinstall.sh
-sh ./scripts/1-setup.sh
-sh ./scripts/2-user.sh
-sh ./3-post-setup.sh
+sh $SCRIPTS_DIR/startup.sh
+sh $SCRIPTS_DIR/0-preinstall.sh
+sh $SCRIPTS_DIR/1-setup.sh
+sh $SCRIPTS_DIR/2-user.sh
+sh $SCRIPTS_DIR/3-post-setup.sh
 
 echo -ne "
 -------------------------------------------------------------------------

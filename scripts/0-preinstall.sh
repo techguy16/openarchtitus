@@ -176,10 +176,9 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 if [[ ! -d "/sys/firmware/efi" ]]; then
-    grub-install --target=x86_64-efi --efi-directory=/mnt/boot --bootloader-id=GRUB
+    grub-install --boot-directory=/mnt/boot ${DISK}
 else
-    # pacstrap /mnt efibootmgr --noconfirm --needed
-    grub-install --target=i386-pc /mnt/boot
+    pacstrap /mnt efibootmgr --noconfirm --needed
 fi
 echo -ne "
 -------------------------------------------------------------------------

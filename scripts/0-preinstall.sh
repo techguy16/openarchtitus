@@ -139,27 +139,8 @@ echo -ne "
 -------------------------------------------------------------------------
 "
 
-if [[ $kernelchose == "linux" ]]
-then
-  pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
-elif [[ $kernelchose == "linux-lts" ]]
-then
-  pacstrap /mnt base base-devel linux-lts linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
-elif [[ $kernelchose == "linux-zen" ]]
-then
-  pacstrap /mnt base base-devel linux-zen linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
-elif [[ $kernelchose == "linux-hardened" ]]
-then
-  pacstrap /mnt base base-devel linux-hardened linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
-elif [[ $kernelchose == "linux-xanmod" ]]
-then
-  pacstrap /mnt base base-devel linux-xanmod linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
-else
-  echo -ne "No kernel chosen. Using default settings..."
-  pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
-fi
 
-pacstrap /mnt base base-devel linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
+pacstrap /mnt base base-devel linux linux-firmware vim nano sudo archlinux-keyring wget libnewt --noconfirm --needed
 pacstrap /mnt ${kernelchose} --noconfirm --needed
 echo "keyserver hkp://keyserver.ubuntu.com" >> /mnt/etc/pacman.d/gnupg/gpg.conf
 cp -R ${SCRIPT_DIR} /mnt/root/OpenArchTitus

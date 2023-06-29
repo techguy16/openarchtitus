@@ -1,3 +1,6 @@
+# Won't fix state
+I believe there is a bug in `pacstrap` or `grub-install`, which doesn't allow this script to function correctly. This code is going unmaintained until it's either fixed or this is archived, whichever is first.
+
 # OpenArchTitus
 
 This is a version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) that will be actively maintained.

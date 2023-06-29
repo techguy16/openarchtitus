@@ -1,7 +1,3 @@
-# Won't fix
-I believe there is a bug in `pacstrap` or `grub-install` which isn't allowing the kernel to install or work properly. 
-For now this project is going unmaintained.
-
 # OpenArchTitus
 
 This is a version of [ArchTitus (Now Archived)](https://github.com/christitustech/archtitus) that will be actively maintained.

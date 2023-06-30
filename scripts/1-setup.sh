@@ -115,6 +115,9 @@ elif grep -E "Integrated Graphics Controller" <<< ${gpu_type}; then
     pacman -S --noconfirm --needed libva-intel-driver libvdpau-va-gl lib32-vulkan-intel vulkan-intel libva-intel-driver libva-utils lib32-mesa
 elif grep -E "Intel Corporation UHD" <<< ${gpu_type}; then
     pacman -S --needed --noconfirm libva-intel-driver libvdpau-va-gl lib32-vulkan-intel vulkan-intel libva-intel-driver libva-utils lib32-mesa
+elif grep -E "VMware SVGA II Adapter" <<< ${gpu_type}; then
+    pacman -S --needed --noconfirm Virtualbox-guest-utils
+    systemctl enable vboxservice.service
 fi
 #SETUP IS WRONG THIS IS RUN
 if ! source $HOME/OpenArchTitus/configs/setup.conf; then
